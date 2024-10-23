@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import Header from './components/Header';
+import Content from './components/Content';
+import Counter from './components/Counter';
+import Footer from './components/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  constructor(){
+    super();
+    this.state = {
+      message: 'Hola React'
+    };
+  }
+
+  componentDidMount(){
+    console.log ('App de componentes montados');
+  }
+
+  render(){
+    return(
+      <div>
+        <Header />
+        <Content />
+        <Counter />
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
